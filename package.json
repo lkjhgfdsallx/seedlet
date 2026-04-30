@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "description": "Lightweight, purely-functional LLM agent framework with React frontend.",
+  "devDependencies": {
+    "@biomejs/biome": "^2.1.2",
+    "@types/bun": "latest",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "typedoc": "^0.28.3",
+    "vite": "^5.4.0"
+  },
+  "engines": {
+    "bun": ">=1.2.0"
+  },
+  "license": "MIT",
+  "name": "seedlet",
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist && tsc --project tsconfig.build.json",
+    "check": "biome check src",
+    "dev": "bun run dev.ts",
+    "docs": "typedoc --entryPoints src/ --out docs/",
+    "format": "biome format src --write && biome check src --write",
+    "formatReadme": "prettier README.md --prose-wrap always --print-width 78 -w",
+    "lint": "bun run check && tsc --noEmit",
+    "prepublishOnly": "bun run lint && bun run build && bun test"
+  },
+  "type": "module",
+  "version": "0.1.3"
+}
