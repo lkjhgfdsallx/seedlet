@@ -23,7 +23,6 @@
   },
   "scripts": {
     "dev": "bun run dev.ts",
-    // "build": "bun build src/index.ts --outdir dist && tsc --project tsconfig.build.json",
     "check": "biome check src",
     "docs": "typedoc --entryPoints src/ --out docs/",
     "format": "biome format src --write && biome check src --write",
